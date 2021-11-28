@@ -1,0 +1,8 @@
+
+*.class
+Cliente/*.class
+Servidor/*.class
+Servidor/Controlador/*.class
+Servidor/Dataobjects/*.class
+Servidor/Modelo/*.class
+
