@@ -2,19 +2,22 @@
 package Client.Vistas.Altas;
 
 import java.util.Scanner;
-
-
-
+import Common.Dataobjects.Administrador;
 
 public class AltaAdministrador{
-   
-    private String nombre, user, pass,nt,c;
-       private int matricula;
 
-       public String getUser(){
-        return this.user;
+    private Administrador administrador;
+
+    public Administrador getAdmin(){
+        return this.administrador;
     }
 
+    private String nombre, user, pass,nt,c;
+    private int matricula;
+
+    public String getUser(){
+        return this.user;
+    }
     public String getPass(){
         return this.pass;
     }
@@ -31,10 +34,7 @@ public class AltaAdministrador{
         return this.c;
     }
     
-
     public AltaAdministrador(Scanner sc) {
-        
-       
         System.out.print("Nombre: ");        
         nombre = sc.nextLine();
         nombre = sc.nextLine();
@@ -50,7 +50,7 @@ public class AltaAdministrador{
         System.out.print("Correo : ");
         c = sc.nextLine();
 
-        
+        this.administrador = new Administrador(nombre, user, pass,matricula,nt,c);
     }
 
     public void setMsg(String msg){

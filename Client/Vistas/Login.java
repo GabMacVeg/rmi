@@ -30,9 +30,4 @@ public class Login{
         System.out.println(msg);
     }
 
-    public static void main(String[] args){
-        Scanner sc =  new Scanner(System.in);
-        new Login(sc).show();
-    }
-
 }

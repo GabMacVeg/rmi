@@ -7,7 +7,13 @@ import java.io.IOException;
 
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
-import Common.Usuario;
+import Common.Dataobjects.Administrador;
+import Common.Dataobjects.Alumno;
+import Common.Dataobjects.Carrera;
+import Common.Dataobjects.HorarioAlumno;
+import Common.Dataobjects.HorarioMaestro;
+import Common.Dataobjects.Maestro;
+import Common.Dataobjects.Materia;
 
 public class Table{
 
@@ -17,7 +23,7 @@ public class Table{
         this.tableName = name;        
     }
 
-    public void add(Usuario user){
+    public void add(Administrador admin){
         try {
             FileInputStream file = null;
             boolean existe = true;
@@ -33,7 +39,7 @@ public class Table{
                 oos = new AppendObjectOutputStream(fileo);
             else
                 oos = new ObjectOutputStream(fileo);
-            oos.writeObject(user);  
+            oos.writeObject(admin);  
             oos.close(); 
             fileo.close();     
         } catch (Exception e) {
@@ -41,8 +47,8 @@ public class Table{
         }       
     }
 
-    public Usuario get(int index){
-        Usuario user = null;
+    public Administrador get(int index){
+        Administrador admin = null;
         try {            
             FileInputStream file = null;
             ObjectInputStream ois = null;
@@ -50,8 +56,8 @@ public class Table{
             ois = new ObjectInputStream(file);
             int count = 0;
             while(count<=index){
-                user = (Usuario)ois.readObject();
-                if(user==null) 
+                admin = (Administrador)ois.readObject();
+                if(admin==null) 
                     break;
                 count++;
             }
@@ -81,18 +87,3 @@ public class Table{
         return count;
     }
     
-    public static void main(String[] args) throws IOException, ClassNotFoundException{
-        Table usuarios = new Table("prueba.dat");
-        /*usuarios.add(new Usuario("alan","1234","Alan Diaz",1));
-        usuarios.add(new Usuario("alan","1234","Pedro",1));*/
-        /*usuarios.add(new Usuario("alan","1234","Juan",1));
-        usuarios.add(new Usuario("alan","1234","Raul",1));*/
-
-        Usuario user = usuarios.get(3);
-        System.out.println(user.getNombre());
-        
-        /*Usuario user = usuarios.get(1);
-        System.out.println(user.getNombre());*/
-    }
-    
-}

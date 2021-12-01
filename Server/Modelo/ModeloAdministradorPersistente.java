@@ -1,8 +1,9 @@
-package Modelo;
+package Server.Modelo;
 
 import java.util.ArrayList;
 
-import Dataobjects.Administrador;
+import Common.Dataobjects.Administrador;
+import Utilerias.Table;
 
 public class ModeloAdministradorPersistente{
 

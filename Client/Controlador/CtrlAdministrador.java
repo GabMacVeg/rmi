@@ -39,7 +39,7 @@ public class CtrlAdministrador{
     private ModeloAlumno modeloAlumno;
     private ModeloMateria modeloMateria;
 
-    public CtrlAdministrador(Scanner sc,String nombreAd, ModeloAdministrador modeloAdministrador, ModeloCarrera modeloCarrera, ModeloMaestro modeloMaestro, ModeloAlumno modeloAlumno, ModeloMateria modeloMateria ){
+    public CtrlAdministrador(Scanner sc, ModeloAdministrador modeloAdministrador, ModeloCarrera modeloCarrera, ModeloMaestro modeloMaestro, ModeloAlumno modeloAlumno, ModeloMateria modeloMateria ){
         this.sc=sc;
         this.modeloAdministrador = modeloAdministrador;
         this.modeloCarrera = modeloCarrera;
