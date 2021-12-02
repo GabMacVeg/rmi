@@ -1,8 +1,18 @@
 
 *.class
-Cliente/*.class
-Servidor/*.class
-Servidor/Controlador/*.class
-Servidor/Dataobjects/*.class
-Servidor/Modelo/*.class
+
+Client/*.class
+Client/Controlador/*.class
+Client/Vistas/*.class
+Client/Vistas/Altas/*.class
+Client/Vistas/Bajas/*.class
+Client/Vistas/Menus/*.class
+
+Common/Dataobjects/*.class
+Common/Modelo/*.class
+
+Server/*.class
+Server/Modelo/*.class
+
+Utilerias/*.class
 
