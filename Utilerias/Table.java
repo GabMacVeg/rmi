@@ -23,7 +23,7 @@ public class Table{
         this.tableName = name;        
     }
 
-    public void add(Administrador admin){
+    public void add(Object objeto){
         try {
             FileInputStream file = null;
             boolean existe = true;
@@ -39,7 +39,7 @@ public class Table{
                 oos = new AppendObjectOutputStream(fileo);
             else
                 oos = new ObjectOutputStream(fileo);
-            oos.writeObject(admin);  
+            oos.writeObject(objeto);  
             oos.close(); 
             fileo.close();     
         } catch (Exception e) {
@@ -47,8 +47,8 @@ public class Table{
         }       
     }
 
-    public Administrador get(int index){
-        Administrador admin = null;
+    public Object get(int index){
+        Object objeto = null;
         try {            
             FileInputStream file = null;
             ObjectInputStream ois = null;
@@ -56,8 +56,8 @@ public class Table{
             ois = new ObjectInputStream(file);
             int count = 0;
             while(count<=index){
-                admin = (Administrador)ois.readObject();
-                if(admin==null) 
+                objeto = (Object)ois.readObject();
+                if(objeto==null) 
                     break;
                 count++;
             }
