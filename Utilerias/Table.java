@@ -90,14 +90,14 @@ public class Table{
  public static void main(String[] args) throws IOException, ClassNotFoundException{
         Table administradores = new Table("administradores.dat");
 
-        //administradores.add(new Administrador("Gabriel Macedo","gabriela","1234",1,"8342099019","gabriela@hotmail.com"));
+        administradores.add(new Administrador("Gabriel Macedo","gabriela","1234",1,"8342099019","gabriela@hotmail.com"));
         //administradores.add(new Administrador("Eduardo Velez","eduardoa","1234",2,"8342688724","eduardoa@hotmail.com"));
         //administradores.add(new Administrador("Jaime Ramirez","jaimea","1234",3,"8342212140","jaimea@hotmail.com"));
 
 
-        Object admin = administradores.get(2);
-        Administrador administrador=(Administrador)admin;
-        System.out.println(administrador.getNombre());
+        // Object admin = administradores.get(3);
+        // Administrador administrador=(Administrador)admin;
+        // System.out.println(administrador.getNombre());
         
         /*Usuario user = usuarios.get(1);
         System.out.println(user.getNombre());*/

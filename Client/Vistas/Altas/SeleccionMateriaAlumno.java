@@ -1,16 +1,21 @@
 package Client.Vistas.Altas;
 
 import java.util.Scanner;
+import Common.Dataobjects.HorarioAlumno;
 
 public class SeleccionMateriaAlumno{
 
     String materia,nombreProfe;
+    private HorarioAlumno horarioAlumno;
 
     public String getNombreProfe(){
         return this.nombreProfe;
     }
     public String getMateria(){
         return this.materia;
+    }
+    public HorarioAlumno getHorario(){
+        return this.horarioAlumno;
     }
 
 
@@ -20,6 +25,7 @@ public class SeleccionMateriaAlumno{
         materia = sc.nextLine(); 
         System.out.println("Nombre Profesor: ");
         nombreProfe = sc.nextLine();
+        this.horarioAlumno = new HorarioAlumno(nombreA,materia,nombreProfe,0);
         
     }
     public void setMsg(String msg){

@@ -19,8 +19,8 @@ public class ModeloMaestroPersistente implements ModeloMaestro{
 
     public ModeloMaestroPersistente(){
         //primer usuario maestros
-        //maestros.add(new Maestro("Gabriel Maestro","gabrielm","1234",1,"8342099019","gabrielm@hotmail.com"));
-        /*maestros.add(new Maestro("Eduardo Maestro","eduardom","1234",2,"8342688724","eduardom@hotmail.com"));
+        /*maestros.add(new Maestro("Gabriel Maestro","gabrielm","1234",1,"8342099019","gabrielm@hotmail.com"));
+        maestros.add(new Maestro("Eduardo Maestro","eduardom","1234",2,"8342688724","eduardom@hotmail.com"));
         maestros.add(new Maestro("Jaime Maestro","jaimem","1234",3,"8342212140","jaimem@hotmail.com"));
         maestros.add(new Maestro("Paco Maestro","paco","1234",4,"8342508028","grimim@hotmail.com"));
         maestros.add(new Maestro("Alan Diaz ","alan","1234",5,"8341262077","calix35@hotmail.com"));

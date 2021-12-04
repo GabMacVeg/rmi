@@ -1,9 +1,15 @@
 
 package Client.Vistas.Altas;
 import java.util.Scanner;
+import Common.Dataobjects.Maestro;
 
 
 public class AltaMaestro{
+    private Maestro maestro;
+
+    public Maestro getMaestro(){
+        return this.maestro;
+    }
     
    private String nombre, user, pass,nt,c;
        private int matricula;
@@ -44,6 +50,7 @@ public class AltaMaestro{
         nt = sc.nextLine();
         System.out.print("Correo : ");
         c = sc.nextLine();
+        this.maestro = new Maestro(nombre,user,pass,matricula,nt,c);
         
     }
 

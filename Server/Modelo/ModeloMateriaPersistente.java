@@ -17,12 +17,12 @@ public class ModeloMateriaPersistente implements ModeloMateria{
 
     public ModeloMateriaPersistente(){
         //primer usuario administrador
-        //materias.add(new Materia("Programacion",2222,7));
-        // materias.add(new Materia("Ingles",3333,4));
-        // materias.add(new Materia("Algoritmos",4444,3));
-        // materias.add(new Materia("Matematicas",5555,1));
-        // materias.add(new Materia("Quimica",6666,2));
-        // materias.add(new Materia("Contabilidad",7777,5));
+        /*materias.add(new Materia("Programacion",2222,7));
+        materias.add(new Materia("Ingles",3333,4));
+        materias.add(new Materia("Algoritmos",4444,3));
+        materias.add(new Materia("Matematicas",5555,1));
+        materias.add(new Materia("Quimica",6666,2));
+        materias.add(new Materia("Contabilidad",7777,5));*/
     }
 
     public void altaMateria(Materia materia){

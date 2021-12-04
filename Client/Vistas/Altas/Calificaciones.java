@@ -42,6 +42,7 @@ public class Calificaciones{
         alumno=sc.nextLine();
         System.out.println("Ingrese la calificacion");
         calif=sc.nextFloat();
+
     } 
 
     public void setMsg(String msg){

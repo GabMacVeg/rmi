@@ -18,7 +18,14 @@ public class ModeloHorarioMaestroPersistente implements ModeloHorarioMaestro{
 
     public ModeloHorarioMaestroPersistente(){
         //primer usuario administrador
-        //horarioMaestro.add(new HorarioMaestro("Gabriel Maestro","Programacion"));
+        /*horarioMaestro.add(new HorarioMaestro("Gabriel Maestro","Programacion"));
+        horarioMaestro.add(new HorarioMaestro("Gabriel Maestro","Ingles"));
+        horarioMaestro.add(new HorarioMaestro("Eduardo Maestro","Quimica"));
+        horarioMaestro.add(new HorarioMaestro("Eduardo Maestro","Matematicas"));
+        horarioMaestro.add(new HorarioMaestro("Jaime Maestro","nada"));
+        horarioMaestro.add(new HorarioMaestro("Paco Maestro","nada"));
+        horarioMaestro.add(new HorarioMaestro("Alan Diaz","Programacion"));
+        horarioMaestro.add(new HorarioMaestro("Mirna Meza","Contabilidad"));*/
     }
 
     public void alta(HorarioAlumno horarioAlumno){

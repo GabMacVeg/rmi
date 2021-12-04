@@ -16,9 +16,9 @@ public class ModeloAdministradorPersistente implements ModeloAdministrador{
 
     public ModeloAdministradorPersistente(){
         
-        administradores.add(new Administrador("Gabriel Macedo","gabriela","1234",1,"8342099019","gabriela@hotmail.com"));
-        //administradores.add(new Administrador("Eduardo Velez","eduardoa","1234",2,"8342688724","eduardoa@hotmail.com"));
-        //administradores.add(new Administrador("Jaime Ramirez","jaimea","1234",3,"8342212140","jaimea@hotmail.com"));
+        /*administradores.add(new Administrador("Gabriel Macedo","gabriela","1234",1,"8342099019","gabriela@hotmail.com"));
+        administradores.add(new Administrador("Eduardo Velez","eduardoa","1234",2,"8342688724","eduardoa@hotmail.com"));
+        administradores.add(new Administrador("Jaime Ramirez","jaimea","1234",3,"8342212140","jaimea@hotmail.com"));*/
 
     }
 
@@ -49,5 +49,7 @@ public class ModeloAdministradorPersistente implements ModeloAdministrador{
         }
         return false;
     }
+       
+    
 
 }

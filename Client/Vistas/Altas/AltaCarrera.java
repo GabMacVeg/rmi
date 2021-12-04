@@ -2,9 +2,15 @@
 package Client.Vistas.Altas;
 
 import java.util.Scanner;
+import Common.Dataobjects.Carrera;
 
 
 public class AltaCarrera{
+    private Carrera carrera;
+
+     public  Carrera getCarrera(){
+        return this.carrera;
+    }
 
     String nombre;
         int matricula;
@@ -22,6 +28,7 @@ public class AltaCarrera{
         nombre = sc.nextLine();
         System.out.print("Matricula: ");
         matricula = sc.nextInt();
+        this.carrera = new Carrera(nombre, matricula);
         
     }
     public void setMsg(String msg){

@@ -14,8 +14,11 @@ public class ModeloAlumnoPersistente implements ModeloAlumno{
 
     public ModeloAlumnoPersistente(){
     
-        //alumnos.add(new Usuario("alan","1234","Alan Diaz", 1));
-
+        /*alumnos.add(new Alumno("Gabriel Macedo","gabrielalu","1234",1,7,"8342099019","gabrielalu@hotmail.com"));
+        alumnos.add(new Alumno("Eduardo Velez","eduardoalu","1234",2,7,"8342688724","eduardoalu@hotmail.com"));
+        alumnos.add(new Alumno("Jaime Ramirez","jaimealu","1234",3,6,"8342212140","jaimealu@hotmail.com"));
+        alumnos.add(new Alumno("Chavira","chaviraalu","1234",4,6,"8342665150","chaviraalu@hotmail.com"));
+        alumnos.add(new Alumno("Grimaldo","grimialu","1234",5,3,"8343508028","grimialu@hotmail.com"));*/
     }
 
     public Alumno login(String user, String pass){  

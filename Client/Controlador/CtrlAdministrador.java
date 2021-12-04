@@ -5,14 +5,14 @@ import Client.Vistas.Menus.MenuAdministrador;
 import Client.Vistas.Altas.AltaAdministrador;
 import Client.Vistas.Bajas.BajaAdministrador;
 import Common.Modelo.ModeloAdministrador;
-//import Client.Vistas.Listas.ListaAdministrador;
+import Client.Vistas.Listas.ListaAdministrador;
 
-//import Client.Vistas.Listas.ListaMaestro;
+import Client.Vistas.Listas.ListaMaestro;
 import Client.Vistas.Altas.AltaMaestro;
 import Client.Vistas.Bajas.BajaMaestro;
 import Common.Modelo.ModeloMaestro;
 
-//import Client.Vistas.Listas.ListaAlumno;
+import Client.Vistas.Listas.ListaAlumno;
 import Common.Modelo.ModeloAlumno;
 import Client.Vistas.Altas.AltaAlumno;
 import Client.Vistas.Bajas.BajaAlumno;
@@ -20,13 +20,13 @@ import Client.Vistas.Bajas.BajaAlumno;
 import Common.Modelo.ModeloCarrera;
 import Client.Vistas.Altas.AltaCarrera;
 import Client.Vistas.Bajas.BajaCarrera;
-//import Client.Vistas.Listas.ListaCarreras;
+import Client.Vistas.Listas.ListaCarreras;
 
 import Common.Modelo.ModeloMateria;
 import Client.Vistas.Altas.AltaMateria;
 import Client.Vistas.Bajas.BajaMateria;
-//import Client.Vistas.Listas.ListaMaterias;
-//import Client.Vistas.Listas.VerDatosAdmin;
+import Client.Vistas.Listas.ListaMaterias;
+import Client.Vistas.Listas.VerDatosAdmin;
 
 
 
@@ -55,10 +55,10 @@ public class CtrlAdministrador{
 
             do{
                 menuAdmi.show();
-                /*switch(menuAdmi.getOpcion()){
+                switch(menuAdmi.getOpcion()){
                     case 1://ALTA ADMINISTRADOR
                         AltaAdministrador altaadmin = new AltaAdministrador(sc);
-                        existe = modeloAdministrador.buscarAdmi(altaadmin.getAdmin().getUser());
+                        existe = modeloAdministrador.buscarAdmin(altaadmin.getAdmin().getUser());
                         if(existe)
                             altaadmin.setMsg("El usuario ya existe!");
                         else{
@@ -68,16 +68,16 @@ public class CtrlAdministrador{
                     break;
                     
                     case 2://BAJA ADMINISTRADOR
-                        BajaAdministrador bajaadmin =  new BajaAdministrador(sc);
+                        /*BajaAdministrador bajaadmin =  new BajaAdministrador(sc);
                             bajaadmin.show();
-                            existe = modeloAdministrador.buscarAdmi(bajaadmin.getAdmin());
+                            existe = modeloAdministrador.buscarAdmin(bajaadmin.getAdmin());
                             if(existe){
                                 //Existe el usuario
                                 modeloAdministrador.eliminar(bajaadmin.getAdmin());
                                 bajaadmin.setMsg("Se da de baja!");
                             }else{
                                 bajaadmin.setMsg("Usuario inexistente");
-                            }
+                            }*/
                     break;
 
                     case 3://LISTADOS - ADMINISTRADORES - MESTROS - ALUMNOS
@@ -89,18 +89,18 @@ public class CtrlAdministrador{
                             menuAdmi.showVer();
                             switch(menuAdmi.getVer()){
                                 case 1: //Ver Administradores
-                                    listadoadmi.imprimirAdministradores(modeloAdministrador.getAdministradores());
+                                    listadoadmi.imprimirAdministradores();
                                 break;
                                 case 2://Ver Maestros
-                                    listadomae.imprimirMaestros(modeloMaestro.getMaestros());
+                                    listadomae.imprimirMaestros();
                                 break;
                                 case 3://Ver Alumnos
-                                    listadoalu.imprimirAlumnos(modeloAlumno.getAlumnos());
+                                    listadoalu.imprimirAlumnos();
                                 break;
                                 case 4://Ver Todos
-                                    listadoadmi.imprimirAdministradores(modeloAdministrador.getAdministradores());
-                                    listadomae.imprimirMaestros(modeloMaestro.getMaestros());
-                                    listadoalu.imprimirAlumnos(modeloAlumno.getAlumnos());
+                                    listadoadmi.imprimirAdministradores();
+                                    listadomae.imprimirMaestros();
+                                    listadoalu.imprimirAlumnos();
                                 break;
                                 case 5://Salir
                                 
@@ -119,7 +119,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 5://baja maestros
-                        BajaMaestro bajamae =  new BajaMaestro(sc);
+                        /*BajaMaestro bajamae =  new BajaMaestro(sc);
                             bajamae.show();
                             existe = modeloMaestro.buscarMaestro(bajamae.getMaestro());
                             if(existe){
@@ -128,7 +128,7 @@ public class CtrlAdministrador{
                                 bajamae.setMsg("Se da de baja!");
                             }else{
                                 bajamae.setMsg("Maestro inexistente");
-                            }
+                            }*/
                     break;
                     case 6://alta alumnos
                         AltaAlumno altaalum = new AltaAlumno(sc);
@@ -141,7 +141,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 7:// baja alumnos
-                        BajaAlumno bajaalum =  new BajaAlumno(sc);
+                        /*BajaAlumno bajaalum =  new BajaAlumno(sc);
                             bajaalum.show();
                             existe = modeloAlumno.buscarAlumno(bajaalum.getAlumno());
                             if(existe){
@@ -150,7 +150,7 @@ public class CtrlAdministrador{
                                 bajaalum.setMsg("Se da de baja!");
                             }else{
                                 bajaalum.setMsg("Alumno inexistente");
-                            }
+                            }*/
                     break;
                     case 8://alta materias
                         AltaMateria altamat = new AltaMateria(sc);
@@ -163,7 +163,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 9://baja materias
-                        BajaMateria bajamat =  new BajaMateria(sc);
+                        /*BajaMateria bajamat =  new BajaMateria(sc);
                             bajamat.show();
                             existe = modeloMateria.buscarMateria(bajamat.getMateria());
                             if(existe){
@@ -172,11 +172,11 @@ public class CtrlAdministrador{
                                 bajamat.setMsg("Se da de baja!");
                             }else{
                                 bajamat.setMsg("Materia inexistente");
-                            }
+                            }*/
                     break;
                     case 10://lista materias
-                        ListaMaterias listadomaterias = new ListaMaterias();
-                        listadomaterias.imprimirMaterias(modeloMateria.getMaterias());
+                        //ListaMaterias listadomaterias = new ListaMaterias();
+                        //listadomaterias.imprimirMaterias(modeloMateria.getMaterias());
                     break;
                     case 11://alta carreras
                     AltaCarrera altacarrera = new AltaCarrera(sc);
@@ -184,12 +184,12 @@ public class CtrlAdministrador{
                         if(existe)
                             altacarrera.setMsg("La carrera  ya existe!");
                         else{
-                            modeloCarrera.altacarrera(altacarrera.getCarrera());
+                            modeloCarrera.alta(altacarrera.getCarrera());
                             altacarrera.setMsg("La carrera se creo");
                         }
                     break;
                     case 12://baja carreras
-                    BajaCarrera bajacarrera = new BajaCarrera(sc);
+                    /*BajaCarrera bajacarrera = new BajaCarrera(sc);
                         do{
                             bajacarrera.show();
                             existe = modeloCarrera.buscarCarrera(bajacarrera.getNombre());
@@ -199,21 +199,21 @@ public class CtrlAdministrador{
                             }else{
                                 bajacarrera.setMsg("Carrera inexistente. Intenta de nuevo!");
                             }
-                        }while(!existe);
+                        }while(!existe);*/
                     break;
                     case 13://lista carreras
-                        ListaCarreras listadocarreras = new ListaCarreras();
-                        listadocarreras.imprimirCarreras(modeloCarrera.getCarreras());  
+                        //ListaCarreras listadocarreras = new ListaCarreras();
+                        //listadocarreras.imprimirCarreras(modeloCarrera.getCarreras());  
                     break;
                     case 14://Ver DATOS
-                        VerDatosAdmin verDatosAdmin = new VerDatosAdmin();
-                        verDatosAdmin.imprimirDatosAdmin(modeloAdministrador.getAdministradores(),nombreAd);
+                        //VerDatosAdmin verDatosAdmin = new VerDatosAdmin();
+                        //verDatosAdmin.imprimirDatosAdmin(modeloAdministrador.getAdministradores(),nombreAd);
                     break;
                     case 20://salir
                     break;
                     default://opcion incorrecta
                     menuAdmi.setMsg("Opcion incorrecta");
-                }*/
+                }
 
             }while(menuAdmi.getOpcion()!=20);//aqi acaba el while
         }catch(Exception e){
