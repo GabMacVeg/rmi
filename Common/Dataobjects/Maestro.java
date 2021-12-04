@@ -1,6 +1,7 @@
 package Common.Dataobjects;
+import java.io.Serializable;
 
-public class Maestro{
+public class Maestro implements Serializable{
     private String user;
     private String pass;
     private String nombre;

@@ -1,32 +1,32 @@
 package Client.Controlador;
 import java.util.Scanner;
 
-import Vista.Menus.MenuAdministrador;
-import Vista.Altas.AltaAdministrador;
-import Vista.Bajas.BajaAdministrador;
-import Modelo.ModeloAdministrador;
-import Vista.Listas.ListaAdministrador;
+import Client.Vistas.Menus.MenuAdministrador;
+import Client.Vistas.Altas.AltaAdministrador;
+import Client.Vistas.Bajas.BajaAdministrador;
+import Common.Modelo.ModeloAdministrador;
+//import Client.Vistas.Listas.ListaAdministrador;
 
-import Vista.Listas.ListaMaestro;
-import Vista.Altas.AltaMaestro;
-import Vista.Bajas.BajaMaestro;
-import Modelo.ModeloMaestro;
+//import Client.Vistas.Listas.ListaMaestro;
+import Client.Vistas.Altas.AltaMaestro;
+import Client.Vistas.Bajas.BajaMaestro;
+import Common.Modelo.ModeloMaestro;
 
-import Vista.Listas.ListaAlumno;
-import Modelo.ModeloAlumno;
-import Vista.Altas.AltaAlumno;
-import Vista.Bajas.BajaAlumno;
+//import Client.Vistas.Listas.ListaAlumno;
+import Common.Modelo.ModeloAlumno;
+import Client.Vistas.Altas.AltaAlumno;
+import Client.Vistas.Bajas.BajaAlumno;
 
-import Modelo.ModeloCarrera;
-import Vista.Altas.AltaCarrera;
-import Vista.Bajas.BajaCarrera;
-import Vista.Listas.ListaCarreras;
+import Common.Modelo.ModeloCarrera;
+import Client.Vistas.Altas.AltaCarrera;
+import Client.Vistas.Bajas.BajaCarrera;
+//import Client.Vistas.Listas.ListaCarreras;
 
-import Modelo.ModeloMateria;
-import Vista.Altas.AltaMateria;
-import Vista.Bajas.BajaMateria;
-import Vista.Listas.ListaMaterias;
-import Vista.Listas.VerDatosAdmin;
+import Common.Modelo.ModeloMateria;
+import Client.Vistas.Altas.AltaMateria;
+import Client.Vistas.Bajas.BajaMateria;
+//import Client.Vistas.Listas.ListaMaterias;
+//import Client.Vistas.Listas.VerDatosAdmin;
 
 
 
@@ -52,10 +52,10 @@ public class CtrlAdministrador{
 
             MenuAdministrador menuAdmi = new MenuAdministrador(sc);
             boolean existe;
-            
+
             do{
                 menuAdmi.show();
-                switch(menuAdmi.getOpcion()){
+                /*switch(menuAdmi.getOpcion()){
                     case 1://ALTA ADMINISTRADOR
                         AltaAdministrador altaadmin = new AltaAdministrador(sc);
                         existe = modeloAdministrador.buscarAdmi(altaadmin.getAdmin().getUser());
@@ -213,7 +213,7 @@ public class CtrlAdministrador{
                     break;
                     default://opcion incorrecta
                     menuAdmi.setMsg("Opcion incorrecta");
-                }
+                }*/
 
             }while(menuAdmi.getOpcion()!=20);//aqi acaba el while
         }catch(Exception e){

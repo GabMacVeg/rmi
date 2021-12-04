@@ -5,8 +5,8 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 
 import Server.Modelo.ModeloAdministradorPersistente;
-import Server.Modelo.ModeloAlumnoPersitente;
-import Server.Modelo.ModeloMaestroPersitente;
+import Server.Modelo.ModeloAlumnoPersistente;
+import Server.Modelo.ModeloMaestroPersistente;
 
 import Common.Modelo.ModeloAdministrador;
 import Common.Modelo.ModeloAlumno;
@@ -21,12 +21,12 @@ public class Server {
         try {
             //Creo el objeto remoto
             ModeloAdministradorPersistente modeloAd =  new ModeloAdministradorPersistente();
-            ModeloAlumnoPersitente modeloAl =  new ModeloAlumnoPersitente();
+            ModeloAlumnoPersistente modeloAl =  new ModeloAlumnoPersistente();
             ModeloMaestroPersistente modeloMa = new ModeloMaestroPersistente();
 
             //Creo el stub, encargado de recibir parametros y de regresar informacion
             ModeloAdministrador modelo =  (ModeloAdministrador) UnicastRemoteObject.exportObject(modeloAd, 0);
-            ModeloAlumno modelo2 =  (ModeloAlumnoA)UnicastRemoteObject.exportObject(modeloAl, 0);
+            ModeloAlumno modelo2 =  (ModeloAlumno)UnicastRemoteObject.exportObject(modeloAl, 0);
             ModeloMaestro modelo3 = (ModeloMaestro)UnicastRemoteObject.exportObject(modeloMa, 0);
 
             //Localizar el rmiregistry, es decir que este abierto

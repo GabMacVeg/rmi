@@ -1,6 +1,7 @@
 package Common.Dataobjects;
+import java.io.Serializable;
 
-public class Administrador{
+public class Administrador implements Serializable{
     private String user;
     private String pass;
     private int matricula;

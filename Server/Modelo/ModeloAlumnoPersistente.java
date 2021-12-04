@@ -2,33 +2,30 @@ package Server.Modelo;
 
 import java.util.ArrayList;
 
-import Dataobjects.Alumno;
+import Common.Modelo.ModeloAlumno;
 
-public class ModeloAlumnoPersistente{
+import Utilerias.Table;
+import Common.Dataobjects.Alumno;
 
-    private ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
+public class ModeloAlumnoPersistente implements ModeloAlumno{
 
-    public ArrayList<Alumno> getAlumnos(){
-        return this.alumnos;
-    }
+    
+    Table alumnos = new Table("alumnos.dat");
 
     public ModeloAlumnoPersistente(){
-        //primer usuario administrador
-        alumnos.add(new Alumno("Gabriel Macedo","gabrielalu","1234",1,7,"8342099019","gabrielalu@hotmail.com"));
-        alumnos.add(new Alumno("Eduardo Velez","eduardoalu","1234",2,7,"8342688724","eduardoalu@hotmail.com"));
-        alumnos.add(new Alumno("Jaime Ramirez","jaimealu","1234",3,6,"8342212140","jaimealu@hotmail.com"));
-        alumnos.add(new Alumno("Chavira","chaviraalu","1234",4,6,"8342665150","chaviraalu@hotmail.com"));
-        alumnos.add(new Alumno("Grimaldo","grimialu","1234",5,3,"8343508028","grimialu@hotmail.com"));
+    
+        //alumnos.add(new Usuario("alan","1234","Alan Diaz", 1));
 
     }
 
-    public Alumno login(String user, String pass){
-        for(int i=0;i<alumnos.size(); i++){
-            if(alumnos.get(i).getUser().equals(user)){
-                if(alumnos.get(i).getPass().equals(pass)){
-                    return alumnos.get(i);
-                }
-                
+    public Alumno login(String user, String pass){  
+        //metodo size, darme el numero de elementos de la lista
+        for(int i=0;i<alumnos.size();i++){//Recorriendo la lista
+            Object alum = alumnos.get(i);
+            Alumno alumno=(Alumno)alum;
+            //El metodo get, me da el elemento que esta en la posicion i de la lista
+            if(alumno.getUser().equals(user) && alumno.getPass().equals(pass)){
+                return (Alumno)alumnos.get(i);
             }
         }
         return null;
@@ -40,41 +37,14 @@ public class ModeloAlumnoPersistente{
 
     public boolean buscarAlumno(String user){
         for(int i=0; i<this.alumnos.size(); i++){
-            if(this.alumnos.get(i).getUser().equals(user)){
+            Object alum = alumnos.get(i);
+            Alumno alumno=(Alumno)alum;
+            if(
+                alumno.getUser().equals(user)){
                 return true;
             }
         }
         return false;
     }
-
-    public String buscarNombre(String user){
-        for(int i=0; i<this.alumnos.size(); i++){
-            if(this.alumnos.get(i).getUser().equals(user)){
-                return alumnos.get(i).getNombre();
-            }
-        }
-        return "Nada";
-    }
-
-    public void eliminar(String user){
-        for(int i=0; i<this.alumnos.size(); i++){
-            if(this.alumnos.get(i).getUser().equals(user)){
-                this.alumnos.remove(i);
-            }
-        }
-        
-    }
-     public int buscarMatricula(String user){
-        for(int i=0; i<this.alumnos.size(); i++){
-            if(this.alumnos.get(i).getUser().equals(user)){
-                return alumnos.get(i).getMatricula();
-            }
-        }
-        return 1;
-    }
-
-    public void setMsg(String msg){
-        System.out.println(msg);
-     }
 
 }

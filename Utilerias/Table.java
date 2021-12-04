@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
+
 import Common.Dataobjects.Administrador;
 import Common.Dataobjects.Alumno;
 import Common.Dataobjects.Carrera;
@@ -56,7 +57,7 @@ public class Table{
             ois = new ObjectInputStream(file);
             int count = 0;
             while(count<=index){
-                objeto = (Object)ois.readObject();
+                objeto = ois.readObject();
                 if(objeto==null) 
                     break;
                 count++;
@@ -66,7 +67,7 @@ public class Table{
         } catch (Exception e) {
             //TODO: handle exception
         }      
-        return user;
+        return objeto;
     }
 
     public int size(){
@@ -86,4 +87,23 @@ public class Table{
         } 
         return count;
     }
+ public static void main(String[] args) throws IOException, ClassNotFoundException{
+        Table administradores = new Table("administradores.dat");
+
+        //administradores.add(new Administrador("Gabriel Macedo","gabriela","1234",1,"8342099019","gabriela@hotmail.com"));
+        //administradores.add(new Administrador("Eduardo Velez","eduardoa","1234",2,"8342688724","eduardoa@hotmail.com"));
+        //administradores.add(new Administrador("Jaime Ramirez","jaimea","1234",3,"8342212140","jaimea@hotmail.com"));
+
+
+        Object admin = administradores.get(2);
+        Administrador administrador=(Administrador)admin;
+        System.out.println(administrador.getNombre());
+        
+        /*Usuario user = usuarios.get(1);
+        System.out.println(user.getNombre());*/
+    }
+}
+
+
     
+   

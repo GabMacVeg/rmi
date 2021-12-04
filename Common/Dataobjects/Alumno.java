@@ -1,6 +1,7 @@
 package Common.Dataobjects;
+import java.io.Serializable;
 
-public class Alumno{
+public class Alumno implements Serializable{
 
     private String user;
     private String pass;

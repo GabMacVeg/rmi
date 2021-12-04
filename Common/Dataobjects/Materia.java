@@ -1,6 +1,7 @@
 package Common.Dataobjects;
+import java.io.Serializable;
 
-public class Materia{
+public class Materia implements Serializable{
     private String nombre;
     private int matricula;
     private int semestre;

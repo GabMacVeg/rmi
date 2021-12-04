@@ -1,6 +1,7 @@
 package Common.Dataobjects;
+import java.io.Serializable;
 
-public class Carrera{
+public class Carrera implements Serializable{
     private String nombre;
     private int matricula;
 

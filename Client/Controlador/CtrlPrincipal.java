@@ -9,6 +9,14 @@ import Client.Vistas.Login;
 import Common.Modelo.ModeloAdministrador;
 import Common.Modelo.ModeloAlumno;
 import Common.Modelo.ModeloMaestro;
+import Common.Modelo.ModeloCarrera;
+import Common.Modelo.ModeloMateria;
+
+import Common.Dataobjects.Administrador;
+import Common.Dataobjects.Alumno;
+import Common.Dataobjects.Carrera;
+import Common.Dataobjects.Maestro;
+import Common.Dataobjects.Materia;
 
 public class CtrlPrincipal{
     private Scanner sc = new Scanner(System.in);

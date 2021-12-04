@@ -1,6 +1,7 @@
 package Common.Dataobjects;
+import java.io.Serializable;
 
-public class HorarioMaestro{
+public class HorarioMaestro implements Serializable{
 
     
     private String materia,nombreMaestro;
