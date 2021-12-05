@@ -5,7 +5,9 @@ import Common.Dataobjects.Maestro;
 import java.util.ArrayList;
 import Utilerias.Table;
 
-public class ListaMaestro{    
+public class ListaMaestro{   
+    
+     
 
   
     Table maestros = new Table("maestros.dat");

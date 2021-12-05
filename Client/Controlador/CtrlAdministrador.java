@@ -175,8 +175,8 @@ public class CtrlAdministrador{
                             }*/
                     break;
                     case 10://lista materias
-                        //ListaMaterias listadomaterias = new ListaMaterias();
-                        //listadomaterias.imprimirMaterias(modeloMateria.getMaterias());
+                        ListaMaterias listadomaterias = new ListaMaterias();
+                        listadomaterias.imprimirMaterias();
                     break;
                     case 11://alta carreras
                     AltaCarrera altacarrera = new AltaCarrera(sc);

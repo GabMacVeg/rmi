@@ -13,10 +13,8 @@ public class ListaAdministrador{
     public void imprimirAdministradores(){
 
         for(int i=0; i<this.administradores.size(); i++){
-            Object admin = administradores.get(i);
-            Administrador administrador=(Administrador)admin;
-            administrador.getDatos();
-        
+            Administrador admin = administradores.get(i);
+            System.out.println(admin.toString());
         }
         
     } 
