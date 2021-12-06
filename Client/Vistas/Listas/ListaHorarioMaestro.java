@@ -18,7 +18,7 @@ public class ListaHorarioMaestro{
             Object maaes = horarioMaestros.get(i);
             HorarioMaestro prueba = (HorarioMaestro)maaes;
             if(prueba.getnombreMaestro().equals(nombreM)){
-                System.out.println(prueba);
+                System.out.println(prueba.getDatos());
             }
         }
     }

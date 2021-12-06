@@ -48,6 +48,30 @@ public class Table{
         }       
     }
 
+    public void delete(){
+        try {
+            FileInputStream file = null;
+            boolean existe = true;
+            try{
+                file = new FileInputStream(tableName);
+                file.close();
+            }catch(FileNotFoundException e){
+                existe = false;            
+            }        
+            FileOutputStream fileo = new FileOutputStream(tableName, true);
+            ObjectOutputStream oos;
+            if(existe)
+                oos = new AppendObjectOutputStream(fileo);
+            else
+                oos = new ObjectOutputStream(fileo);
+            oos.writeObject(objeto);  
+            oos.close(); 
+            fileo.close();     
+        } catch (Exception e) {
+            //TODO: handle exception
+        }          
+    }
+
     public Object get(int index){
         Object objeto = null;
         try {            

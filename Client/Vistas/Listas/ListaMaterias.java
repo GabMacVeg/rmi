@@ -15,8 +15,8 @@ public class ListaMaterias{
 
         for(int i=0; i<this.materias.size(); i++){
             Object mate = materias.get(i);
-            this.materia=(Materia)mate;
-            materia.getTodo();
+            Materia prueba = (Materia)mate;
+            System.out.println(materia.getTodo());
         }
         
     } 
