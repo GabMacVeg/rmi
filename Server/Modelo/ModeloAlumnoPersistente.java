@@ -9,8 +9,9 @@ import Common.Dataobjects.Alumno;
 
 public class ModeloAlumnoPersistente implements ModeloAlumno{
 
-    
+    int identificador=0;
     Table alumnos = new Table("alumnos.dat");
+    Table temporal = new Table("temporal.dat");
 
     public ModeloAlumnoPersistente(){
     
@@ -68,6 +69,31 @@ public class ModeloAlumnoPersistente implements ModeloAlumno{
             }
         }
         return 1;
+    }
+    public void eliminar(String user){
+        for(int i=0; i<this.alumnos.size(); i++){
+            Object alum = alumnos.get(i);
+            Alumno alumno=(Alumno)alum;
+            if(alumno.getUser().equals(user)){
+                identificador=i;
+            }
+        }
+
+        for(int i=0; i<this.alumnos.size(); i++){
+            Object alum = alumnos.get(i);
+            Alumno alumno=(Alumno)alum;
+            if(i!=identificador){
+                this.temporal.add(alumno);
+            }
+        }
+        this.alumnos.eliminar();
+
+        for(int i=0; i<this.temporal.size(); i++){
+            Object alum = temporal.get(i);
+            Alumno alumno=(Alumno)alum;
+            this.alumnos.add(alumno);
+        }
+        this.temporal.eliminar();
     }
 
 }

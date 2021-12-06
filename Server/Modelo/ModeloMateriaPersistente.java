@@ -14,6 +14,8 @@ public class ModeloMateriaPersistente implements ModeloMateria{
     // }
 
     Table materias = new Table("materias.dat");
+    int identificador=0;
+    Table temporal = new Table("temporal.dat");
 
     public ModeloMateriaPersistente(){
         //primer usuario administrador
@@ -41,13 +43,30 @@ public class ModeloMateriaPersistente implements ModeloMateria{
     }
 
 
-    /*public void eliminar(String nombre){
+    public void eliminar(String user){
         for(int i=0; i<this.materias.size(); i++){
-            if(this.materias.get(i).getNombre().equals(nombre)){
-                this.materias.remove(i);
+            Object mate = materias.get(i);
+            Materia materia=(Materia)mate;
+            if(materia.getNombre().equals(user)){
+                identificador=i;
             }
         }
-        
-    }*/
+
+        for(int i=0; i<this.materias.size(); i++){
+            Object mate = materias.get(i);
+            Materia materia=(Materia)mate;
+            if(i!=identificador){
+                this.temporal.add(materia);
+            }
+        }
+        this.materias.eliminar();
+
+        for(int i=0; i<this.temporal.size(); i++){
+            Object mate = temporal.get(i);
+            Materia materia=(Materia)mate;
+            this.materias.add(materia);
+        }
+        this.temporal.eliminar();
+    }
 
 }

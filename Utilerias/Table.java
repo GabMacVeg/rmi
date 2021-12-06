@@ -15,6 +15,7 @@ import Common.Dataobjects.HorarioAlumno;
 import Common.Dataobjects.HorarioMaestro;
 import Common.Dataobjects.Maestro;
 import Common.Dataobjects.Materia;
+import java.io.*;
 
 public class Table{
 
@@ -22,6 +23,32 @@ public class Table{
 
     public Table(String name){
         this.tableName = name;        
+    }
+
+    public void eliminar(){
+        /*try {
+            FileInputStream file = null;
+            boolean existe = true;
+            try{
+                file = new FileInputStream(tableName);
+                file.close();
+            }catch(FileNotFoundException e){
+                existe = false;            
+            }        
+            new FileOutputStream(tableName, true).close();
+            
+              
+             
+        } catch (Exception e) {
+            //TODO: handle exception
+        }*/
+
+        File file = new File(tableName);
+        if(file.delete()){
+            System.out.println("si jalo");
+        }else{
+            System.out.println("no jalo");
+        }
     }
 
     public void add(Object objeto){
@@ -46,30 +73,6 @@ public class Table{
         } catch (Exception e) {
             //TODO: handle exception
         }       
-    }
-
-    public void delete(){
-        try {
-            FileInputStream file = null;
-            boolean existe = true;
-            try{
-                file = new FileInputStream(tableName);
-                file.close();
-            }catch(FileNotFoundException e){
-                existe = false;            
-            }        
-            FileOutputStream fileo = new FileOutputStream(tableName, true);
-            ObjectOutputStream oos;
-            if(existe)
-                oos = new AppendObjectOutputStream(fileo);
-            else
-                oos = new ObjectOutputStream(fileo);
-            oos.writeObject(objeto);  
-            oos.close(); 
-            fileo.close();     
-        } catch (Exception e) {
-            //TODO: handle exception
-        }          
     }
 
     public Object get(int index){

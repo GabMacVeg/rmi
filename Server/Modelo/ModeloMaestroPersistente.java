@@ -16,6 +16,8 @@ public class ModeloMaestroPersistente implements ModeloMaestro{
     }*/
 
     Table maestros = new Table("maestros.dat");
+    int identificador=0;
+    Table temporal = new Table("temporal.dat");
 
     public ModeloMaestroPersistente(){
         //primer usuario maestros
@@ -79,14 +81,31 @@ public class ModeloMaestroPersistente implements ModeloMaestro{
         return 1;
     }
 
-    /*public void eliminar(String user){
+    public void eliminar(String user){
         for(int i=0; i<this.maestros.size(); i++){
-            if(this.maestros.get(i).getUser().equals(user)){
-                this.maestros.remove(i);
+            Object mae = maestros.get(i);
+            Maestro maestro=(Maestro)mae;
+            if(maestro.getUser().equals(user)){
+                identificador=i;
             }
         }
-        
-    }*/
+
+        for(int i=0; i<this.maestros.size(); i++){
+            Object mae = maestros.get(i);
+            Maestro maestro=(Maestro)mae;
+            if(i!=identificador){
+                this.temporal.add(maestro);
+            }
+        }
+        this.maestros.eliminar();
+
+        for(int i=0; i<this.temporal.size(); i++){
+            Object mae = temporal.get(i);
+            Maestro maestro=(Maestro)mae;
+            this.maestros.add(maestro);
+        }
+        this.temporal.eliminar();
+    }
 
     public void setMsg(String msg){
         System.out.println(msg);

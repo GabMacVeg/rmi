@@ -12,4 +12,6 @@ public interface ModeloMaestro extends Remote{
     public String buscarNombre(String user) throws RemoteException;
     public int buscarMatricula(String user) throws RemoteException; 
     public void setMsg(String msg) throws RemoteException;
+    public void eliminar(String user) throws RemoteException;
+}
 }

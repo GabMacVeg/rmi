@@ -9,10 +9,13 @@ import Common.Dataobjects.Administrador;
 
 public class ModeloAdministradorPersistente implements ModeloAdministrador{
 
+    int identificador=0;
+
     //ArrayList - Crear una lista de objetos (object, int, float, ....)
 
     //private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     Table administradores = new Table("administradores.dat");
+    Table temporal = new Table("temporal.dat");
 
     public ModeloAdministradorPersistente(){
         
@@ -59,7 +62,31 @@ public class ModeloAdministradorPersistente implements ModeloAdministrador{
         }
         return "false";
     }
-       
-    
 
+    public void eliminar(String user){
+        for(int i=0; i<this.administradores.size(); i++){
+            Object admin = administradores.get(i);
+            Administrador administrador=(Administrador)admin;
+            if(administrador.getUser().equals(user)){
+                identificador=i;
+            }
+        }
+
+        for(int i=0; i<this.administradores.size(); i++){
+            Object admin = administradores.get(i);
+            Administrador administrador=(Administrador)admin;
+            if(i!=identificador){
+                this.temporal.add(administrador);
+            }
+        }
+        this.administradores.eliminar();
+
+        for(int i=0; i<this.temporal.size(); i++){
+            Object admin = temporal.get(i);
+            Administrador administrador=(Administrador)admin;
+            this.administradores.add(administrador);
+        }
+        this.temporal.eliminar();
+    }
+       
 }

@@ -68,16 +68,17 @@ public class CtrlAdministrador{
                     break;
                     
                     case 2://BAJA ADMINISTRADOR
-                        /*BajaAdministrador bajaadmin =  new BajaAdministrador(sc);
+                        BajaAdministrador bajaadmin =  new BajaAdministrador(sc);
                             bajaadmin.show();
                             existe = modeloAdministrador.buscarAdmin(bajaadmin.getAdmin());
                             if(existe){
                                 //Existe el usuario
                                 modeloAdministrador.eliminar(bajaadmin.getAdmin());
+
                                 bajaadmin.setMsg("Se da de baja!");
                             }else{
                                 bajaadmin.setMsg("Usuario inexistente");
-                            }*/
+                            }
                     break;
 
                     case 3://LISTADOS - ADMINISTRADORES - MESTROS - ALUMNOS
@@ -119,7 +120,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 5://baja maestros
-                        /*BajaMaestro bajamae =  new BajaMaestro(sc);
+                        BajaMaestro bajamae =  new BajaMaestro(sc);
                             bajamae.show();
                             existe = modeloMaestro.buscarMaestro(bajamae.getMaestro());
                             if(existe){
@@ -128,7 +129,7 @@ public class CtrlAdministrador{
                                 bajamae.setMsg("Se da de baja!");
                             }else{
                                 bajamae.setMsg("Maestro inexistente");
-                            }*/
+                            }
                     break;
                     case 6://alta alumnos
                         AltaAlumno altaalum = new AltaAlumno(sc);
@@ -141,7 +142,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 7:// baja alumnos
-                        /*BajaAlumno bajaalum =  new BajaAlumno(sc);
+                        BajaAlumno bajaalum =  new BajaAlumno(sc);
                             bajaalum.show();
                             existe = modeloAlumno.buscarAlumno(bajaalum.getAlumno());
                             if(existe){
@@ -150,7 +151,7 @@ public class CtrlAdministrador{
                                 bajaalum.setMsg("Se da de baja!");
                             }else{
                                 bajaalum.setMsg("Alumno inexistente");
-                            }*/
+                            }
                     break;
                     case 8://alta materias
                         AltaMateria altamat = new AltaMateria(sc);
@@ -163,7 +164,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 9://baja materias
-                        /*BajaMateria bajamat =  new BajaMateria(sc);
+                        BajaMateria bajamat =  new BajaMateria(sc);
                             bajamat.show();
                             existe = modeloMateria.buscarMateria(bajamat.getMateria());
                             if(existe){
@@ -172,7 +173,7 @@ public class CtrlAdministrador{
                                 bajamat.setMsg("Se da de baja!");
                             }else{
                                 bajamat.setMsg("Materia inexistente");
-                            }*/
+                            }
                     break;
                     case 10://lista materias
                         ListaMaterias listadomaterias = new ListaMaterias();
@@ -189,7 +190,7 @@ public class CtrlAdministrador{
                         }
                     break;
                     case 12://baja carreras
-                    /*BajaCarrera bajacarrera = new BajaCarrera(sc);
+                    BajaCarrera bajacarrera = new BajaCarrera(sc);
                         do{
                             bajacarrera.show();
                             existe = modeloCarrera.buscarCarrera(bajacarrera.getNombre());
@@ -199,7 +200,7 @@ public class CtrlAdministrador{
                             }else{
                                 bajacarrera.setMsg("Carrera inexistente. Intenta de nuevo!");
                             }
-                        }while(!existe);*/
+                        }while(!existe);
                     break;
                     case 13://lista carreras
                         ListaCarreras listadocarreras = new ListaCarreras();

@@ -9,6 +9,8 @@ import Utilerias.Table;
 public class ModeloCarreraPersistente implements ModeloCarrera{
 
     Table carreras = new Table("carreras.dat");
+    int identificador=0;
+    Table temporal = new Table("temporal.dat");
 
     //private ArrayList<Carrera> carreras = new ArrayList<Carrera>();
 
@@ -38,13 +40,30 @@ public class ModeloCarreraPersistente implements ModeloCarrera{
     }
 
 
-   /* public void eliminar(String nombre){
+   public void eliminar(String user){
         for(int i=0; i<this.carreras.size(); i++){
-            if(this.carreras.get(i).getNombre().equals(nombre)){
-                this.carreras.remove(i);
+            Object carre = carreras.get(i);
+            Carrera carrera=(Carrera)carre;
+            if(carrera.getNombre().equals(user)){
+                identificador=i;
             }
         }
-        
-    }*/
+
+        for(int i=0; i<this.carreras.size(); i++){
+            Object carre = carreras.get(i);
+            Carrera carrera=(Carrera)carre;
+            if(i!=identificador){
+                this.temporal.add(carrera);
+            }
+        }
+        this.carreras.eliminar();
+
+        for(int i=0; i<this.temporal.size(); i++){
+            Object carre = temporal.get(i);
+            Carrera carrera=(Carrera)carre;
+            this.carreras.add(carrera);
+        }
+        this.temporal.eliminar();
+    }
 
 }

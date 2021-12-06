@@ -10,5 +10,5 @@ public interface ModeloAdministrador extends Remote{
     public void alta(Administrador admin) throws RemoteException;
     public boolean buscarAdmin(String user) throws RemoteException;
     public String buscarNombre(String user) throws RemoteException;
-    
+    public void eliminar(String user) throws RemoteException;
 }
