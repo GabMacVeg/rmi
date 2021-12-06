@@ -11,12 +11,16 @@ import Common.Modelo.ModeloAlumno;
 import Common.Modelo.ModeloMaestro;
 import Common.Modelo.ModeloCarrera;
 import Common.Modelo.ModeloMateria;
+import Common.Modelo.ModeloHorarioAlumno;
+import Common.Modelo.ModeloHorarioMaestro;
 
 import Common.Dataobjects.Administrador;
 import Common.Dataobjects.Alumno;
 import Common.Dataobjects.Carrera;
 import Common.Dataobjects.Maestro;
 import Common.Dataobjects.Materia;
+import Common.Dataobjects.HorarioAlumno;
+import Common.Dataobjects.HorarioMaestro;
 
 public class CtrlPrincipal{
     private Scanner sc = new Scanner(System.in);
@@ -28,15 +32,19 @@ public class CtrlPrincipal{
     private ModeloMaestro modeloMaestro;
     private ModeloCarrera modeloCarrera;
     private ModeloMateria modeloMateria;
-    //private ModeloHorarioMaestro modeloHorarioMaestro;
-    //private ModeloHorarioAlumno modeloHorarioAlumno;
+    private ModeloHorarioMaestro modeloHorarioMaestro;
+    private ModeloHorarioAlumno modeloHorarioAlumno;
 
     public CtrlPrincipal(){
         try{
             registry = LocateRegistry.getRegistry("localhost");
             modeloAdministrador = (ModeloAdministrador)registry.lookup("ModeloAdministrador");    
             modeloAlumno = (ModeloAlumno)registry.lookup("ModeloAlumno");  
-            modeloMaestro = (ModeloMaestro)registry.lookup("ModeloMaestro");    
+            modeloMaestro = (ModeloMaestro)registry.lookup("ModeloMaestro");  
+            modeloCarrera = (ModeloCarrera)registry.lookup("ModeloCarrera");
+            modeloMateria = (ModeloMateria)registry.lookup("ModeloMateria");
+            modeloHorarioMaestro = (ModeloHorarioMaestro)registry.lookup("ModeloHorarioMaestro");  
+            modeloHorarioAlumno = (ModeloHorarioAlumno)registry.lookup("ModeloHorarioAlumno");  
 
             do{
             login.show();

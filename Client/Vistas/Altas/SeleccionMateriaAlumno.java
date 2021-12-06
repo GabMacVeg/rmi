@@ -5,7 +5,7 @@ import Common.Dataobjects.HorarioAlumno;
 
 public class SeleccionMateriaAlumno{
 
-    String materia,nombreProfe;
+    String materia,nombreProfe,nombreA;
     private HorarioAlumno horarioAlumno;
 
     public String getNombreProfe(){
@@ -19,7 +19,8 @@ public class SeleccionMateriaAlumno{
     }
 
 
-    public SeleccionMateriaAlumno(Scanner sc){
+    public SeleccionMateriaAlumno(Scanner sc,String nombreA){
+        this.nombreA = nombreA;
         System.out.print("Nombre Materia: ");        
         materia = sc.nextLine();
         materia = sc.nextLine(); 

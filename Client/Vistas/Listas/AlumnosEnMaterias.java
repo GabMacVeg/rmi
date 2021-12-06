@@ -4,8 +4,8 @@ package Client.Vistas.Listas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Modelo.ModeloHorarioAlumno;
-import Modelo.ModeloHorarioMaestro;
+import Common.Modelo.ModeloHorarioAlumno;
+import Common.Modelo.ModeloHorarioMaestro;
 
 public class AlumnosEnMaterias{    
     private Scanner sc;

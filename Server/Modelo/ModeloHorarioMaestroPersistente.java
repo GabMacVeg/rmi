@@ -32,11 +32,11 @@ public class ModeloHorarioMaestroPersistente implements ModeloHorarioMaestro{
         this.horarioMaestros.add(horarioMaestro);
     }
 
-    public boolean buscarMateria(String nombre){
+    public boolean buscarMateria(String nombre,String nombreM){
         for(int i=0; i<this.horarioMaestros.size(); i++){
             Object hmae = horarioMaestros.get(i);
             HorarioMaestro horarioM = (HorarioMaestro)hmae;
-            if(horarioM.getMateria().equals(nombre)){
+            if(horarioM.getMateria().equals(nombre) && horarioM.getnombreMaestro().equals(nombreM)){
                 return true;
             }
         }

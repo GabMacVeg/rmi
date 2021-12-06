@@ -9,7 +9,7 @@ import Utilerias.Table;
 public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
 
     Table horarioAlumnos = new Table("horarioAlumnos.dat");
-
+    public int identificador;
     //private ArrayList<Carrera> carreras = new ArrayList<Carrera>();
 
     // public ArrayList<Carrera> getCarreras(){
@@ -27,15 +27,20 @@ public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
         horarioAlumno.add(new HorarioAlumno("Grimaldo","Contabilidad","Mirna Meza",0)); */  
     }
 
+    public int getIdentificador(){
+        return this.identificador;
+    }
+
     public void alta(HorarioAlumno horarioAlumno){
         this.horarioAlumnos.add(horarioAlumno);
     }
 
-    public boolean buscarMateria(String nombre){
+    public boolean buscarMateria(String nombre,String nombreA){
         for(int i=0; i<this.horarioAlumnos.size(); i++){
             Object halu = horarioAlumnos.get(i);
             HorarioAlumno halumno=(HorarioAlumno)halu;
-            if(halumno.getMateria().equals(nombre)){
+            if(halumno.getMateria().equals(nombre) && halumno.getnombreAlumno().equals(nombreA)){
+                identificador=i;
                 return true;
             }
         }

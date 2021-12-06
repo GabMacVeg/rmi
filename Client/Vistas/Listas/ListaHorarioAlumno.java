@@ -1,21 +1,24 @@
 package Client.Vistas.Listas;
 
-import Dataobjects.HorarioAlumno;
-import Modelo.ModeloHorarioAlumno;
-import Modelo.ModeloAlumno;
-import Dataobjects.Alumno; 
-
+import Common.Dataobjects.HorarioAlumno;
+import Common.Modelo.ModeloHorarioAlumno;
+import Common.Modelo.ModeloAlumno;
+import Common.Dataobjects.Alumno; 
+import Utilerias.Table;
 
 import java.util.ArrayList;
 
 public class ListaHorarioAlumno{
 
-    public void imprimirHorario(ArrayList<HorarioAlumno> horarioAlumno, String nombreA){
+    Table horarioAlumnos = new Table("horarioAlumnos.dat");
 
-        for(int i=0; i<horarioAlumno.size(); i++){
+    public void imprimirHorario(String nombreA){
 
-            if(horarioAlumno.get(i).getnombreAlumno().equals(nombreA)){
-                System.out.println(horarioAlumno.get(i));
+        for(int i=0; i<horarioAlumnos.size(); i++){
+            Object alu = horarioAlumnos.get(i);
+            HorarioAlumno prueba = (HorarioAlumno)alu;
+            if(prueba.getnombreAlumno().equals(nombreA)){
+                System.out.println(prueba);
             }
         }
     }
@@ -24,12 +27,14 @@ public class ListaHorarioAlumno{
         System.out.println(msg);
     }
 
-    public void imprimirHorarioMateria(ArrayList<HorarioAlumno> horarioAlumno, String nombre){
+    public void imprimirHorarioMateria(String nombre){
 
-        for(int i=0; i<horarioAlumno.size(); i++){
-            if(horarioAlumno.get(i).getMateria().equals(nombre)){
-                System.out.println(horarioAlumno.get(i).getnombreAlumno()+ "\t" +horarioAlumno.get(i).getMateria());
-                
+        for(int i=0; i<horarioAlumnos.size(); i++){
+            Object alu = horarioAlumnos.get(i);
+            HorarioAlumno prueba = (HorarioAlumno)alu;
+            if(prueba.getMateria().equals(nombre)){
+                //System.out.println(horarioAlumno.get(i).getnombreAlumno()+ "\t" +horarioAlumno.get(i).getMateria());
+                System.out.println(prueba.getDatos());
             }
         }
 

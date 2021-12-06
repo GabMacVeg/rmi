@@ -32,12 +32,19 @@ public class Server {
             ModeloAdministradorPersistente modeloAd =  new ModeloAdministradorPersistente();
             ModeloAlumnoPersistente modeloAl =  new ModeloAlumnoPersistente();
             ModeloMaestroPersistente modeloMa = new ModeloMaestroPersistente();
+            ModeloCarreraPersistente modeloCa = new ModeloCarreraPersistente();
+            ModeloHorarioAlumnoPersistente modeloha = new ModeloHorarioAlumnoPersistente();
+            ModeloHorarioMaestroPersistente modelohma = new ModeloHorarioMaestroPersistente();
+            ModeloMateriaPersistente modeloMat = new ModeloMateriaPersistente();
 
             //Creo el stub, encargado de recibir parametros y de regresar informacion
             ModeloAdministrador modelo =  (ModeloAdministrador) UnicastRemoteObject.exportObject(modeloAd, 0);
             ModeloAlumno modelo2 =  (ModeloAlumno)UnicastRemoteObject.exportObject(modeloAl, 0);
             ModeloMaestro modelo3 = (ModeloMaestro)UnicastRemoteObject.exportObject(modeloMa, 0);
-
+            ModeloCarrera modelo4 = (ModeloCarrera)UnicastRemoteObject.exportObject(modeloCa,0);
+            ModeloHorarioAlumno modelo5 = (ModeloHorarioAlumno)UnicastRemoteObject.exportObject(modeloha,0);
+            ModeloHorarioMaestro modelo6 = (ModeloHorarioMaestro)UnicastRemoteObject.exportObject(modelohma,0);
+            ModeloMateria modelo7 = (ModeloMateria)UnicastRemoteObject.exportObject(modeloMat,0);
             //Localizar el rmiregistry, es decir que este abierto
             Registry registry = LocateRegistry.getRegistry();
             
@@ -45,6 +52,10 @@ public class Server {
             registry.rebind("ModeloAdministrador", modelo);
             registry.rebind("ModeloAlumno", modelo2);
             registry.rebind("ModeloMaestro", modelo3);
+            registry.rebind("ModeloCarrera",modelo4);
+            registry.rebind("ModeloHorarioAlumno",modelo5);
+            registry.rebind("ModeloHorarioMaestro",modelo6);
+            registry.rebind("ModeloMateria",modelo7);
 
             System.out.println("Servidor listo!!!");
         } catch (Exception e) {
