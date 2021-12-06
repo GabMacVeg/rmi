@@ -26,28 +26,11 @@ public class Table{
     }
 
     public void eliminar(){
-        /*try {
-            FileInputStream file = null;
-            boolean existe = true;
-            try{
-                file = new FileInputStream(tableName);
-                file.close();
-            }catch(FileNotFoundException e){
-                existe = false;            
-            }        
-            new FileOutputStream(tableName, true).close();
-            
-              
-             
-        } catch (Exception e) {
-            //TODO: handle exception
-        }*/
-
         File file = new File(tableName);
         if(file.delete()){
-            System.out.println("si jalo");
+            
         }else{
-            System.out.println("no jalo");
+            
         }
     }
 
