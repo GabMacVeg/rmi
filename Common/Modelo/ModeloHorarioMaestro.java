@@ -12,4 +12,5 @@ public interface ModeloHorarioMaestro extends Remote{
     public void alta(HorarioMaestro horarioMaestro) throws RemoteException;
     public boolean buscarMateria(String nombre) throws RemoteException;
     
+    
 }

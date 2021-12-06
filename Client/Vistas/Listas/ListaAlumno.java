@@ -11,9 +11,11 @@ public class ListaAlumno{
     Table alumnos = new Table("alumnos.dat");
 
     public void imprimirAlumnos(){
+
         for(int i=0; i<this.alumnos.size(); i++){
-            Object alumno = alumnos.get(i);
-            System.out.println(alumno);
+            Object alum = alumnos.get(i);
+            Alumno prueba = (Alumno)alum;
+            System.out.println(prueba.getDatos());
         }
         
     } 

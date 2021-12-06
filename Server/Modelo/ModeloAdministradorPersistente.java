@@ -49,6 +49,16 @@ public class ModeloAdministradorPersistente implements ModeloAdministrador{
         }
         return false;
     }
+    public String buscarNombre(String user){
+        for(int i=0; i<this.administradores.size(); i++){
+            Object admin = administradores.get(i);
+            Administrador administrador=(Administrador)admin;
+            if(administrador.getUser().equals(user)){
+                return administrador.getNombre();
+            }
+        }
+        return "false";
+    }
        
     
 

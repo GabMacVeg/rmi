@@ -13,8 +13,9 @@ public class ListaAdministrador{
     public void imprimirAdministradores(){
 
         for(int i=0; i<this.administradores.size(); i++){
-            Administrador admin = administradores.get(i);
-            System.out.println(admin.toString());
+            Object admin = administradores.get(i);
+            Administrador prueba = (Administrador)admin;
+            System.out.println(prueba.getDatos());
         }
         
     } 

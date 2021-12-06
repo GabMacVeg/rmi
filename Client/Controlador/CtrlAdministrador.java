@@ -39,7 +39,7 @@ public class CtrlAdministrador{
     private ModeloAlumno modeloAlumno;
     private ModeloMateria modeloMateria;
 
-    public CtrlAdministrador(Scanner sc, ModeloAdministrador modeloAdministrador, ModeloCarrera modeloCarrera, ModeloMaestro modeloMaestro, ModeloAlumno modeloAlumno, ModeloMateria modeloMateria ){
+    public CtrlAdministrador(Scanner sc,String nombreAd, ModeloAdministrador modeloAdministrador, ModeloCarrera modeloCarrera, ModeloMaestro modeloMaestro, ModeloAlumno modeloAlumno, ModeloMateria modeloMateria ){
         
         try{
 
@@ -202,12 +202,12 @@ public class CtrlAdministrador{
                         }while(!existe);*/
                     break;
                     case 13://lista carreras
-                        //ListaCarreras listadocarreras = new ListaCarreras();
-                        //listadocarreras.imprimirCarreras(modeloCarrera.getCarreras());  
+                        ListaCarreras listadocarreras = new ListaCarreras();
+                        listadocarreras.imprimirCarreras();  
                     break;
                     case 14://Ver DATOS
-                        //VerDatosAdmin verDatosAdmin = new VerDatosAdmin();
-                        //verDatosAdmin.imprimirDatosAdmin(modeloAdministrador.getAdministradores(),nombreAd);
+                        VerDatosAdmin verDatosAdmin = new VerDatosAdmin();
+                        verDatosAdmin.imprimirDatosAdmin(nombreAd);
                     break;
                     case 20://salir
                     break;

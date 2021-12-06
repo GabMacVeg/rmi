@@ -42,12 +42,32 @@ public class ModeloAlumnoPersistente implements ModeloAlumno{
         for(int i=0; i<this.alumnos.size(); i++){
             Object alum = alumnos.get(i);
             Alumno alumno=(Alumno)alum;
-            if(
-                alumno.getUser().equals(user)){
+            if(alumno.getUser().equals(user)){
                 return true;
             }
         }
         return false;
+    }
+
+    public String buscarNombre(String user){
+        for(int i=0; i<this.alumnos.size(); i++){
+            Object alum = alumnos.get(i);
+            Alumno alumno=(Alumno)alum;
+            if(alumno.getUser().equals(user)){
+                return alumno.getNombre();
+            }
+        }
+        return "Nada";
+    }
+    public int buscarMatricula(String user){
+        for(int i=0; i<this.alumnos.size(); i++){
+            Object alum = alumnos.get(i);
+            Alumno alumno=(Alumno)alum;
+            if(alumno.getUser().equals(user)){
+                return alumno.getMatricula();
+            }
+        }
+        return 1;
     }
 
 }

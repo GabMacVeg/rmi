@@ -1,7 +1,7 @@
 package Server.Modelo;
 
 import java.util.ArrayList;
-
+import Utilerias.Table;
 import Common.Dataobjects.Materia;
 import Common.Modelo.ModeloMateria;
 
@@ -31,7 +31,9 @@ public class ModeloMateriaPersistente implements ModeloMateria{
 
     public boolean buscarMateria(String nombre){
         for(int i=0; i<this.materias.size(); i++){
-            if(this.materias.get(i).getNombre().equals(nombre)){
+            Object mate = materias.get(i);
+            Materia materia=(Materia)mate;
+            if(materia.getNombre().equals(nombre)){
                 return true;
             }
         }

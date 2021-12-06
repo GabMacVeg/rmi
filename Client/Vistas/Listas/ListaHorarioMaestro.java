@@ -1,21 +1,24 @@
 package Client.Vistas.Listas;
 
-import Dataobjects.HorarioMaestro;
-import Modelo.ModeloHorarioMaestro;
-import Modelo.ModeloMaestro;
-import Dataobjects.Maestro; 
+import Common.Dataobjects.HorarioMaestro;
+import Common.Modelo.ModeloHorarioMaestro;
+import Common.Modelo.ModeloMaestro;
+import Common.Dataobjects.Maestro; 
 
-
+import Utilerias.Table;
 import java.util.ArrayList;
 
 public class ListaHorarioMaestro{
 
-    public void imprimirHorario(ArrayList<HorarioMaestro> horarioMaestro, String nombreM){
+    public void imprimirHorario(String nombreM){
 
-        for(int i=0; i<horarioMaestro.size(); i++){
+        Table horarioMaestros = new Table("horarioMaestros.dat");
 
-            if(horarioMaestro.get(i).getnombreMaestro().equals(nombreM)){
-                System.out.println(horarioMaestro.get(i));
+        for(int i=0; i<horarioMaestros.size(); i++){
+            Object maaes = horarioMaestros.get(i);
+            HorarioMaestro prueba = (HorarioMaestro)maes;
+            if(prueba.getnombreMaestro().equals(nombreM)){
+                System.out.println(prueba);
             }
         }
     }

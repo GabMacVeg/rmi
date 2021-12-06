@@ -8,7 +8,7 @@ import Utilerias.Table;
 
 public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
 
-    Table horarioAlumno = new Table("horarioalumno.dat");
+    Table horarioAlumnos = new Table("horarioAlumnos.dat");
 
     //private ArrayList<Carrera> carreras = new ArrayList<Carrera>();
 
@@ -28,12 +28,14 @@ public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
     }
 
     public void alta(HorarioAlumno horarioAlumno){
-        this.horarioAlumno.add(horarioAlumno);
+        this.horarioAlumnos.add(horarioAlumno);
     }
 
     public boolean buscarMateria(String nombre){
-        for(int i=0; i<this.horarioAlumno.size(); i++){
-            if(this.horarioAlumno.get(i).getMateria().equals(nombre)){
+        for(int i=0; i<this.horarioAlumnos.size(); i++){
+            Object halu = horarioAlumnos.get(i);
+            HorarioAlumno halumno=(HorarioAlumno)halu;
+            if(halumno.getMateria().equals(nombre)){
                 return true;
             }
         }
@@ -52,10 +54,13 @@ public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
 
     public boolean buscarMateriaC(String materia,String alumno, float calif){
 
-        for(int i=0; i<this.horarioAlumno.size(); i++){
+        for(int i=0; i<this.horarioAlumnos.size(); i++){
 
-            if(this.horarioAlumno.get(i).getMateria().equals(materia) && this.horarioAlumno.get(i).getnombreAlumno().equals(alumno)){
-                this.horarioAlumno.get(i).setCalificacion(calif);                
+            Object halu = horarioAlumnos.get(i);
+            HorarioAlumno halumno=(HorarioAlumno)halu;
+
+            if(halumno.getMateria().equals(materia) && halumno.getnombreAlumno().equals(alumno)){
+                halumno.setCalificacion(calif);                
                 return true;
             }
         }

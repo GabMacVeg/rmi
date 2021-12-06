@@ -7,10 +7,19 @@ import java.rmi.server.UnicastRemoteObject;
 import Server.Modelo.ModeloAdministradorPersistente;
 import Server.Modelo.ModeloAlumnoPersistente;
 import Server.Modelo.ModeloMaestroPersistente;
+import Server.Modelo.ModeloCarreraPersistente;
+import Server.Modelo.ModeloHorarioAlumnoPersistente;
+import Server.Modelo.ModeloHorarioMaestroPersistente;
+import Server.Modelo.ModeloMateriaPersistente;
+
 
 import Common.Modelo.ModeloAdministrador;
 import Common.Modelo.ModeloAlumno;
 import Common.Modelo.ModeloMaestro;
+import Common.Modelo.ModeloCarrera;
+import Common.Modelo.ModeloHorarioAlumno;
+import Common.Modelo.ModeloHorarioMaestro;
+import Common.Modelo.ModeloMateria;
 
 //Interface de mi objeto remoto
 

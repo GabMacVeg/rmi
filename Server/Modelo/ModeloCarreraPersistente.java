@@ -28,7 +28,9 @@ public class ModeloCarreraPersistente implements ModeloCarrera{
 
     public boolean buscarCarrera(String nombre){
         for(int i=0; i<this.carreras.size(); i++){
-            if(this.carreras.get(i).getNombre().equals(nombre)){
+            Object carre = carreras.get(i);
+            Carrera carrera=(Carrera)carre;
+            if(carrera.getNombre().equals(nombre)){
                 return true;
             }
         }

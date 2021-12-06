@@ -3,22 +3,25 @@ package Client.Controlador;
 import java.util.ArrayList;
 
 import java.util.Scanner;
-import Vista.Menus.MenuMaestro;
-import Modelo.ModeloMaestro;
-import Modelo.ModeloCarrera;
-import Modelo.ModeloMateria;
-import Vista.Altas.SeleccionMateria;
-import Modelo.ModeloHorarioMaestro;
-import Vista.Listas.ListaHorarioMaestro;
-import Dataobjects.Maestro;
-import Vista.Bajas.QuitarMateria;
-import Vista.Listas.AlumnosEnMaterias;
-import Modelo.ModeloHorarioAlumno;
-import Vista.Listas.ListaHorarioAlumno;
-import Modelo.ModeloHorarioAlumno;
-import Vista.Altas.Calificaciones;
-import Dataobjects.HorarioAlumno;
-import Vista.Listas.VerDatosM;
+
+import Client.Vistas.Menus.MenuMaestro;
+
+import Common.Modelo.ModeloMaestro;
+import Common.Modelo.ModeloCarrera;
+import Common.Modelo.ModeloMateria;
+
+import Client.Vistas.Altas.SeleccionMateria;
+import Common.Modelo.ModeloHorarioMaestro;
+import Client.Vistas.Listas.ListaHorarioMaestro;
+import Common.Dataobjects.Maestro;
+import Client.Vistas.Bajas.QuitarMateria;
+import Client.Vistas.Listas.AlumnosEnMaterias;
+import Common.Modelo.ModeloHorarioAlumno;
+import Client.Vistas.Listas.ListaHorarioAlumno;
+import Common.Modelo.ModeloHorarioAlumno;
+import Client.Vistas.Altas.Calificaciones;
+import Common.Dataobjects.HorarioAlumno;
+import Client.Vistas.Listas.VerDatosM;
 
 public class CtrlMaestro{
 
@@ -81,7 +84,7 @@ public class CtrlMaestro{
                     }
                 break;
                 case 4://Quitar Materias
-                    QuitarMateria quitarmat = new QuitarMateria(sc);
+                    /*QuitarMateria quitarmat = new QuitarMateria(sc);
                     quitarmat.show();
                     existe = modeloMateria.buscarMateria(quitarmat.getMateria());
                     if(existe){
@@ -95,11 +98,11 @@ public class CtrlMaestro{
                         }
                     }else{  
                         quitarmat.setMsg("La Materia no existe"); 
-                    }
+                    }*/
                 break;
                 case 5://Ver Horario
                     ListaHorarioMaestro listadoMaestro = new ListaHorarioMaestro();
-                    listadoMaestro.imprimirHorario(modeloHorarioMaestro.getHorario(), nombreM);
+                    listadoMaestro.imprimirHorario(nombreM);
                 break;
                 case 6://Ver Alumnos
                     AlumnosEnMaterias alumnoenmaterias = new AlumnosEnMaterias(sc);
