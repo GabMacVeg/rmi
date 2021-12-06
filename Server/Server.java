@@ -12,7 +12,6 @@ import Server.Modelo.ModeloHorarioAlumnoPersistente;
 import Server.Modelo.ModeloHorarioMaestroPersistente;
 import Server.Modelo.ModeloMateriaPersistente;
 
-
 import Common.Modelo.ModeloAdministrador;
 import Common.Modelo.ModeloAlumno;
 import Common.Modelo.ModeloMaestro;
