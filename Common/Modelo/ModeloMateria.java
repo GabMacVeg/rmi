@@ -12,5 +12,5 @@ public interface ModeloMateria extends Remote{
     public void altaMateria(Materia materia) throws RemoteException;
     public boolean buscarMateria(String nombre) throws RemoteException;
     public void eliminar(String user) throws RemoteException;
-}
+
 }

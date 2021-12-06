@@ -12,5 +12,5 @@ public interface ModeloCarrera extends Remote{
     public void alta(Carrera carrera) throws RemoteException;
     public boolean buscarCarrera(String id) throws RemoteException;
     public void eliminar(String user) throws RemoteException;
-}
+
 }

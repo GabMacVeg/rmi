@@ -71,6 +71,7 @@ public class ModeloAlumnoPersistente implements ModeloAlumno{
         return 1;
     }
     public void eliminar(String user){
+        
         for(int i=0; i<this.alumnos.size(); i++){
             Object alum = alumnos.get(i);
             Alumno alumno=(Alumno)alum;
@@ -86,6 +87,7 @@ public class ModeloAlumnoPersistente implements ModeloAlumno{
                 this.temporal.add(alumno);
             }
         }
+
         this.alumnos.eliminar();
 
         for(int i=0; i<this.temporal.size(); i++){

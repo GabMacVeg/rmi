@@ -9,6 +9,8 @@ import Utilerias.Table;
 public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
 
     Table horarioAlumnos = new Table("horarioAlumnos.dat");
+    Table temporal = new Table("temporal.dat");
+    int contador=0;
     public int identificador;
     //private ArrayList<Carrera> carreras = new ArrayList<Carrera>();
 
@@ -17,7 +19,7 @@ public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
     // }
 
     public ModeloHorarioAlumnoPersistente(){
-        //primer usuario administrador
+        //primer usuario horarioA
         //pertece al alumno con el id 1      alumno             materia       maestro        calif
        /*horarioAlumno.add(new HorarioAlumno("Gabriel Macedo","Programacion","Alan Diaz",0));
         horarioAlumno.add(new HorarioAlumno("Eduardo Velez","Programacion","Gabriel Maestro",0));
@@ -48,28 +50,44 @@ public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
     }
 
 
-   /* public void eliminar(String nombre){
-        for(int i=0; i<this.carreras.size(); i++){
-            if(this.carreras.get(i).getNombre().equals(nombre)){
-                this.carreras.remove(i);
-            }
-        }
-        
-    }*/
+   
 
     public boolean buscarMateriaC(String materia,String alumno, float calif){
 
+
         for(int i=0; i<this.horarioAlumnos.size(); i++){
-
             Object halu = horarioAlumnos.get(i);
-            HorarioAlumno halumno=(HorarioAlumno)halu;
+            HorarioAlumno horarioA=(HorarioAlumno)halu;
 
-            if(halumno.getMateria().equals(materia) && halumno.getnombreAlumno().equals(alumno)){
-                halumno.setCalificacion(calif);                
-                return true;
+            if(horarioA.getMateria().equals(materia) && horarioA.getnombreAlumno().equals(alumno)){
+                horarioA.setCalificacion(calif);
+                contador=i;
+                this.temporal.add(horarioA);
+            }else{
+                return false;
+            }
+
+        }
+        
+        for(int i=0; i<this.horarioAlumnos.size(); i++){
+            Object halu = horarioAlumnos.get(i);
+            HorarioAlumno horarioA=(HorarioAlumno)halu;
+            if(i!=contador){
+                this.temporal.add(horarioA);
             }
         }
-        return false;
+        this.horarioAlumnos.eliminar();
+
+        for(int i=0; i<this.temporal.size(); i++){
+            Object halu = temporal.get(i);
+            HorarioAlumno horarioA=(HorarioAlumno)halu;
+            this.horarioAlumnos.add(horarioA);
+        }
+        this.temporal.eliminar();
+
+        return true;
     }
+
+    
 
 }
