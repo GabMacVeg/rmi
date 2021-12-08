@@ -64,7 +64,7 @@ public class ModeloHorarioAlumnoPersistente implements ModeloHorarioAlumno{
                 contador=i;
                 this.temporal.add(horarioA);
             }else{
-                return false;
+                
             }
 
         }
